@@ -4,14 +4,17 @@ class Taskbar {
     //     this.col = color(c);
 // }
     
-    Taskbar(int width, int height) {
-        rect( - 50, height, 4 * width, 50);
+    T`askbar() {
         fill(255, 255, 255);
     }
-    
+
+    void setup() {
+        rectMode(CORNER);
+        background(9);
+    }
+
     void draw() {
         fill(255);
-        rect(0, height - 50, width, 50);
+        rect(0, height, width, 50);
     }
 }
-

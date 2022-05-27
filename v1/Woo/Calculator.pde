@@ -1,25 +1,27 @@
-
+import java.util.*;
 
 class Calculator {
-    private int result;
+    private double result;
 
-    public void add(int a, int b) {
+    public void add(double a, double b) {
         result = a + b;
     }
 
-    public void subtract(int a, int b) {
+    public void subtract(double a, double b) {
         result = a - b;
     }
 
-    public void multiply(int a, int b) {
+    public void multiply(double a, int b) {
         result = a * b;
     }
 
-    public void divide(int a, int b) {
+    public void divide(double a, double b) {
         result = a / b;
     }
+    
+    
 
-    public int getResult() {
+    public double getResult() {
         return result;
     }
 
@@ -27,6 +29,10 @@ class Calculator {
         return x >= 0 && x <= 100 && y >= 0 && y <= 20;
     }
 
+    void setup() {
+      rectMode(CORNER);
+      background(293);
+    }
 
     void draw() {
         // draw calculator frame with the operation buttons

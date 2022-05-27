@@ -81,8 +81,8 @@ david :: came up with the idea of emulating windows 95 instead of windows 11
 2022-05-26
 --------------------------------------------------------------
 David :: Typed up basic propro
-Abdullah :: .
-Daniel :: .
+Abdullah :: finalized the propro
+Daniel :: finalized the propro
 ==============================================================
 2022-05-27
 --------------------------------------------------------------
@@ -92,6 +92,6 @@ David :: created basic background and loaded windows 95 image
         - started essential features like alerts and calculator
         - added basic windows 95 WAV files such as chimes, chord, ding, and tada
         - set window title and icon to be windows 95
-Abdullah :: .
-Daniel :: .
+Abdullah :: assisting david
+Daniel :: assisted david
 ==============================================================

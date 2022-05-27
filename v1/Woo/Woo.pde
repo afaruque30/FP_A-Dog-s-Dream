@@ -17,7 +17,7 @@ void setup() {
 void draw() {
     image(bg, width, height/3, 300, 300);
     // create new taskbar
-    Taskbar taskbar = new Taskbar(width, height);
+    Taskbar taskbar = new Taskbar();
     Calculator calculator = new Calculator();
     // fill(255, 255, 255);
     // ellipse(mouseX, mouseY, 50, 50);
