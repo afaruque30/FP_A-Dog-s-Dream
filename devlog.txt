@@ -91,6 +91,7 @@ David :: created basic background and loaded windows 95 image
         - reformatted project folder structure
         - started essential features like alerts and calculator
         - added basic windows 95 WAV files such as chimes, chord, ding, and tada
+        - set window title and icon to be windows 95
 Abdullah :: .
 Daniel :: .
 ==============================================================
