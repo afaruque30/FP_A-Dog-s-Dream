@@ -84,3 +84,10 @@ David :: Typed up basic propro
 Abdullah :: .
 Daniel :: .
 ==============================================================
+2022-05-27
+--------------------------------------------------------------
+David :: created basic background and loaded windows 95 image
+          - also created prelim taskbar
+Abdullah :: .
+Daniel :: .
+==============================================================
