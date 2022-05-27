@@ -4,7 +4,7 @@ Abdullah Faruque
 Daniel Jung
 pd 8
 ---------------------
-<Windows 59>
+<Windows 95>
 recreation of windows 95
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,11 +75,12 @@ group :: fiddled around with processing
 ==============================================================
 2022-05-25
 --------------------------------------------------------------
-group :: moved to a new idea that would be more involved with processing, making a virtual machine taking influence from windows 95.
+group :: moved to a new idea that would be more involved with processing, making a virtual machine
+david :: came up with the idea of emulating windows 95 instead of windows 11
 ==============================================================
 2022-05-26
 --------------------------------------------------------------
-David :: .
+David :: Typed up basic propro
 Abdullah :: .
 Daniel :: .
 ==============================================================
