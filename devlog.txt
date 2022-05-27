@@ -88,6 +88,8 @@ Daniel :: .
 --------------------------------------------------------------
 David :: created basic background and loaded windows 95 image
           - also created prelim taskbar
+        - reformatted project folder structure
+        - started essential features like alerts and calculator
 Abdullah :: .
 Daniel :: .
 ==============================================================
