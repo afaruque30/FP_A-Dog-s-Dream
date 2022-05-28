@@ -15,7 +15,7 @@ void setup() {
 }
 
 void draw() {
-    image(bg, width, height/3, 300, 300);
+    image(bg, width, height / 3, 300, 300);
     // create new taskbar
     Taskbar taskbar = new Taskbar();
     Calculator calculator = new Calculator();
