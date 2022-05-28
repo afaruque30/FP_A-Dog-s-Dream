@@ -95,3 +95,13 @@ David :: created basic background and loaded windows 95 image
 Abdullah :: assisting david
 Daniel :: assisted david
 ==============================================================
+2022-05-28
+--------------------------------------------------------------
+David :: started swing version
+        - added taskbar and added onmouseenter events for the start label
+        - changed icon and title text
+        - made frame not resizable to keep things consistent (1280 x 720)
+        - figured out how to use java swing and awt together
+Abdullah :: assisting david
+Daniel :: assisted david
+==============================================================
