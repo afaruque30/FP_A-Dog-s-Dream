@@ -105,3 +105,13 @@ David :: started swing version
 Abdullah :: assisting david
 Daniel :: assisted david
 ==============================================================
+2022-05-29
+--------------------------------------------------------------
+David :: started v2 of swing version 
+      - restructured project structure
+      - implemented runnable and jpanel instead
+      - fixed positioning of start icons
+      - use desktop class instead of woo for important stuff
+Abdullah :: assisting david
+Daniel :: assisted david
+==============================================================
