@@ -12,6 +12,5 @@ public class Desktop extends JComponent {
 
         Graphics2D g2 = (Graphics2D) g;
         g2.drawImage(new ImageIcon("./assets/windows95.png").getImage(), 640, 0, null);
-
     }
 }

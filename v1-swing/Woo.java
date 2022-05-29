@@ -12,7 +12,6 @@ public class Woo extends JFrame {
         frame.setSize(1280, 720);
         frame.setResizable(false);
         frame.getContentPane().setBackground(new Color(1, 130, 129));
-
         Taskbar taskbar = new Taskbar();
         frame.add(taskbar);
         frame.setVisible(true);
