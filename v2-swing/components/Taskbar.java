@@ -13,7 +13,7 @@ public class Taskbar extends Component {
     private final int y = 650;
     private final int x = 0;
 
-    protected void paintComponent(Graphics g) {
+    public void draw(Graphics g, Desktop desktop) {
         g.setColor(new Color(192, 192, 192));
         g.fillRect(0, 650, 1280, 40);
 
@@ -25,12 +25,12 @@ public class Taskbar extends Component {
         icon.setBounds(0, 640, 50, 50);
         // write the word start
         JLabel start = new JLabel("Start");
-        start.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                setBackground(new Color(192, 0, 0, 100));
-                System.out.println("Mouse entered");
-            }
-        });
+        // start.addMouseListener(new java.awt.event.MouseAdapter() {
+        // public void mouseEntered(java.awt.event.MouseEvent evt) {
+        // this.setBackground(new Color(192, 0, 0, 100));
+        // System.out.println("Mouse entered");
+        // }
+        // });
         start.setBounds(50, 640, 50, 50);
 
         // a box shadow around the icon and the word start
@@ -38,8 +38,8 @@ public class Taskbar extends Component {
         g.fillRect(0, 650, 50, 40);
         g.fillRect(50, 650, 50, 40);
 
-        add(icon);
-        add(start);
+        // add(icon);
+        // add(start);
     }
 
 }
