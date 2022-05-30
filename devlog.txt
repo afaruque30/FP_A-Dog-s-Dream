@@ -112,6 +112,7 @@ David :: started v2 of swing version
       - implemented runnable and jpanel instead
       - fixed positioning of start icons
       - use desktop class instead of woo for important stuff
-Abdullah :: assisting david
+Abdullah :: added a basic calculator to v1-swing ( not to v2 cus it doesn't work there)
+	- four basic operations, square root and square function, and clear function
 Daniel :: assisted david
 ==============================================================
