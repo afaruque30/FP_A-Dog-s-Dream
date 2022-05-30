@@ -119,3 +119,10 @@ Abdullah :: added a basic calculator to v1-swing ( not to v2 cus it doesn't work
 	- four basic operations, square root and square function, and clear function
 Daniel :: assisted david
 ==============================================================
+2022-05-30
+--------------------------------------------------------------
+David :: .
+Abdullah :: using v1-swing, fixed the taskbar to be more usuable, and so it could house the calculator button which opens the calculator app. named v3.
+Daniel :: .
+==============================================================
+
