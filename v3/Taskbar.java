@@ -20,7 +20,7 @@ public class Taskbar extends JPanel implements ActionListener {
                 .setIcon(new ImageIcon(new ImageIcon("./assets/windows95.png").getImage().getScaledInstance(30, 30,
                         java.awt.Image.SCALE_SMOOTH)));
         this.startButton.setBackground(new Color(0xc3c7cb));
-        this.startButton.setPreferredSize(new Dimension(70, 45));
+        this.startButton.setPreferredSize(new Dimension(90, 45));
         this.startButton.setBorder(BorderFactory.createLineBorder(Color.black, 2));
 
         this.calcButton = new JButton("Calculator");

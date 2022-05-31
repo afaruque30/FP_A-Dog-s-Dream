@@ -11,7 +11,7 @@ public class Woo extends JFrame {
         JFrame frame = new JFrame();
         frame.setTitle("Windows 95");
         frame.setIconImage(new ImageIcon("./assets/windows95.png").getImage());
-        frame.setSize(800, 600);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
         // frame.setResizable(false);
         frame.getContentPane().setBackground(new Color(0x55aaaa));
         
