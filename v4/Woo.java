@@ -4,8 +4,6 @@ import javax.swing.*;
 import core.*;
 
 public class Woo extends JFrame {
-    static Calculator calc;
-
     private static void createAndShowGUI() {
         JFrame frame = new JFrame();
         frame.setTitle("Windows 95");
