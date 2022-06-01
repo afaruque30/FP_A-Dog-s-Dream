@@ -48,6 +48,7 @@ public class Taskbar extends JPanel implements ActionListener {
         this.calc = new Calculator();
         this.fileExplorer = new FileExplorer();
         this.calc.setVisible(false);
+        this.fileExplorer.setVisible(false);
     }
 
     @Override
