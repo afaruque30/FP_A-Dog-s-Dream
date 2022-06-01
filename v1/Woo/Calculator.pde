@@ -19,8 +19,6 @@ class Calculator {
         result = a / b;
     }
     
-    
-
     public double getResult() {
         return result;
     }
