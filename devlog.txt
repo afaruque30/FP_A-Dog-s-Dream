@@ -130,4 +130,6 @@ Daniel :: did UML
 Group :: We fixed the issue where when you close calculator, everything closes. POGGERS
 David :: Did v4 - major restructuring of the project structure to enhance maintainability and uniformity
         - initiate plan to use json for virtual file system format (maybe smth better can be used instead)
+Abdullah :: Creaed the flowchart 
+Daniel :: Updated the readme file 
 ==============================================================
