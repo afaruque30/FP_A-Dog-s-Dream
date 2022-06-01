@@ -4,6 +4,7 @@ public class File {
 
     // save virtual file system in JSON format
     public File() {
+        // read from disk.json
         
     }
 }
