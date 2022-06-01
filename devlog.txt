@@ -136,5 +136,6 @@ Daniel :: Updated the readme file
 2022-06-01
 --------------------------------------------------------------
 Abdullah :: fixed heading of flowchart
-
+David :: Started file explorer
+        - fixed bug so that closing one window won't terminate the entire program
 ==============================================================
