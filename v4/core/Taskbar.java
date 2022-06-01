@@ -38,7 +38,7 @@ public class Taskbar extends JPanel implements ActionListener {
 
         JPanel appsPanel = new JPanel();
         // appsPanel.setLayout(new BorderLayout(10, 0));
-        appsPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 0));
+        appsPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 20));
         appsPanel.setOpaque(false);
         appsPanel.add(this.calcButton);
         appsPanel.add(this.fileExplorerButton);
