@@ -36,6 +36,7 @@ public class Calculator extends JFrame implements ActionListener {
         this.setSize(225, 250);
         // this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
+        this.setResizable(false);
 
         this.displayText = "";
         this.prevNum = 0;

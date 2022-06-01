@@ -128,4 +128,5 @@ Daniel :: did UML
 2022-05-31
 --------------------------------------------------------------
 Group :: We fixed the issue where when you close calculator, everything closes. POGGERS
+David :: Did v4 - major restructuring of the project structure to enhance maintainability and uniformity
 ==============================================================
