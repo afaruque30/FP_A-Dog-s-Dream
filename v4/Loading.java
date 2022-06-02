@@ -18,6 +18,10 @@ public class Loading extends JFrame {
         JPanel panel = new JPanel();
         panel.setBackground(Color.black);
         panel.setLayout(new BorderLayout());
+
+        JLabel start = new JLabel("Loading");
+        panel.add(start);
+
         // incremental loading bar
         JProgressBar progressBar = new JProgressBar(0, 100);
         progressBar.setValue(0);

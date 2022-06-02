@@ -8,7 +8,7 @@ import javax.swing.*;
 public class FileExplorer extends JFrame implements ActionListener {
     // implement sidebar
     JMenuBar menuBar;
-    JMenu menu, submenu;
+    JMenu fileMenu, editMenu, viewMenu, toolMenu, helpMenu;
     JMenuItem menuItem;
     JPanel panel;
     JSplitPane splitPane;
@@ -22,20 +22,26 @@ public class FileExplorer extends JFrame implements ActionListener {
         this.setVisible(true);
 
         this.menuBar = new JMenuBar();
-        this.menu = new JMenu("File");
-        // this.submenu = new JMenu("Edit");
-        this.menuBar.add(menu);
-        // this.menuBar.add(submenu);
+        this.fileMenu = new JMenu("File");
+        this.editMenu = new JMenu("Edit");
+        this.viewMenu = new JMenu("View");
+        this.toolMenu = new JMenu("Tools");
+        this.helpMenu = new JMenu("Help");
+        this.menuBar.add(fileMenu);
+        this.menuBar.add(editMenu);
+        this.menuBar.add(viewMenu);
+        this.menuBar.add(toolMenu);
+        this.menuBar.add(helpMenu);
+
 
         panel = new JPanel();
+        panel.setSize(800,600);
         panel.setLayout(new BorderLayout());
         panel.setBackground(Color.white);
         panel.add(new JLabel("File Explorer"), BorderLayout.NORTH);
         this.add(panel);
         splitPane = new JSplitPane();
 
-        // sidebar implementation
-        this.pack();
         this.setLocationRelativeTo(null);
 
         listScrollPanel = new JScrollPane();

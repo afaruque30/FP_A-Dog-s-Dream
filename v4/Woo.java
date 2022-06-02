@@ -8,6 +8,7 @@ import core.*;
 public class Woo extends JFrame {
     static JFrame loadingFrame;
     static Stack<JFrame> screensStack = new Stack<JFrame>();
+    static int ticks;
 
     private static void createAndShowGUI() {
         JFrame frame = new JFrame();

@@ -145,4 +145,7 @@ David :: Started file explorer
 David :: added preliminary boot up screen
         - some additional file explorer changes
         - figured out some additional program logic
+        - fixed file explorer bug
+Abdullah :: came up with notepad idea 
+Daniel :: same
 ==============================================================
