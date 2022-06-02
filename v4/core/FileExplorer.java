@@ -19,8 +19,7 @@ public class FileExplorer extends JFrame implements ActionListener {
         this.setSize(800, 600);
         this.setIconImage(new ImageIcon("../assets/windows95.png").getImage());
         this.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
-        this.setVisible(false);
-        this.setResizable(false);
+        this.setVisible(true);
 
         this.menuBar = new JMenuBar();
         this.menu = new JMenu("File");

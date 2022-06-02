@@ -139,3 +139,9 @@ Abdullah :: fixed heading of flowchart
 David :: Started file explorer
         - fixed bug so that closing one window won't terminate the entire program
 ==============================================================
+2022-06-02
+--------------------------------------------------------------
+David :: added preliminary boot up screen
+        - some additional file explorer changes
+        - figured out some additional program logic
+==============================================================
