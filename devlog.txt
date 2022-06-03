@@ -155,5 +155,6 @@ Abdullah :: came up with notepad idea
 	-apps now have their own windows with content, a title bar with a minimize and close button
 	-taskbar updates according to what apps are currently opened, like windows 95
 	-rewrote calculator app to fit this new format for future applications
+	-added legacy icons for all the apps we plan on making
 Daniel :: updated readme file
 ==============================================================
