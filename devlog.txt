@@ -147,5 +147,13 @@ David :: added preliminary boot up screen
         - figured out some additional program logic
         - fixed file explorer bug
 Abdullah :: came up with notepad idea 
-Daniel :: same
+	-v6 massive changes/revamp
+	-changed name, woo to main
+	-apps now use jpanel instead of jframe
+	-main uses flow layout to show the desktop icons
+	-main now uses jlayeredpane to render the apps. 
+	-apps now have their own windows with content, a title bar with a minimize and close button
+	-taskbar updates according to what apps are currently opened, like windows 95
+	-rewrote calculator app to fit this new format for future applications
+Daniel :: updated readme file
 ==============================================================
