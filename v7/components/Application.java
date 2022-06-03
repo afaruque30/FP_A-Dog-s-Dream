@@ -37,12 +37,13 @@ public class Application implements ActionListener {
         this.appName = appName;
 
         this.desktopIcon = new JButton(this.appName);
+        this.desktopIcon.setToolTipText(this.appName);
         this.desktopIcon.setOpaque(false);
         this.desktopIcon.setContentAreaFilled(false);
         this.desktopIcon.setIcon(new ImageIcon(icon.getScaledInstance(60, 60, Image.SCALE_SMOOTH)));
         this.desktopIcon.setHorizontalTextPosition(SwingConstants.CENTER);
         this.desktopIcon.setVerticalTextPosition(SwingConstants.BOTTOM);
-        this.desktopIcon.setPreferredSize(new Dimension(60, 80));
+        this.desktopIcon.setPreferredSize(new Dimension(100,120));
         this.desktopIcon.addActionListener(e -> {
             this.taskbarIcon.setVisible(true);
             this.window.setVisible(true);
@@ -52,7 +53,8 @@ public class Application implements ActionListener {
         this.taskbarIcon.setBackground(Application.GREY);
         this.taskbarIcon.setIcon(new ImageIcon(icon.getScaledInstance(20, 20, Image.SCALE_SMOOTH)));
         this.taskbarIcon.setHorizontalAlignment(SwingConstants.LEFT);
-        this.taskbarIcon.setPreferredSize(new Dimension(100, 30));
+        this.taskbarIcon.setPreferredSize(new Dimension(150, 40));
+        this.taskbarIcon.setToolTipText(this.appName);
         this.taskbarIcon.setVisible(false);
         this.taskbarIcon.addActionListener(e -> this.window.setVisible(!this.window.isShowing()));
 

@@ -37,7 +37,7 @@ public class Woo extends JFrame {
         // default fullscreen yet allows for resizing
         homescreen.setSize(new Dimension(
             (int) (Toolkit.getDefaultToolkit().getScreenSize().getWidth() * 100),
-            (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 70)
+            (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 133)
         ));
         homescreen.setBackground(new Color(0x55aaaa));
         homescreen.setLayout(new BorderLayout());
