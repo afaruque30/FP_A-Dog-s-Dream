@@ -146,6 +146,7 @@ David :: added preliminary boot up screen
         - some additional file explorer changes
         - figured out some additional program logic
         - fixed file explorer bug
+        - assisted abdullah in revamp
 Abdullah :: came up with notepad idea 
 	-v6 massive changes/revamp
 	-changed name, woo to main
@@ -157,4 +158,10 @@ Abdullah :: came up with notepad idea
 	-rewrote calculator app to fit this new format for future applications
 	-added legacy icons for all the apps we plan on making
 Daniel :: updated readme file
+==============================================================
+2022-06-03
+--------------------------------------------------------------
+David :: rename Main to Woo to be compliant to standards
+        - added basic event listeners to enable JPanel dragging
+        - allow for JPanel resizing
 ==============================================================
