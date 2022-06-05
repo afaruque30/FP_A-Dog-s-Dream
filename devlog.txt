@@ -76,7 +76,7 @@ group :: fiddled around with processing
 2022-05-25
 --------------------------------------------------------------
 group :: moved to a new idea that would be more involved with processing, making a virtual machine
-david :: came up with the idea of emulating windows 95 instead of windows 11
+Abdullah :: came up with the idea of emulating windows 95 instead of windows 11
 ==============================================================
 2022-05-26
 --------------------------------------------------------------
@@ -117,20 +117,22 @@ David :: started v2 of swing version
           - enforce uniformity
 Abdullah :: added a basic calculator to v1-swing ( not to v2 cus it doesn't work there)
 	- four basic operations, square root and square function, and clear function
-Daniel :: assisted david
+Daniel :: assisted abdullah with creating calculator
 ==============================================================
 2022-05-30
 --------------------------------------------------------------
 David :: assisted Abdullah, touched grass
-Abdullah :: using v1-swing, fixed the taskbar to be more usuable, and so it could house the calculator button which opens the calculator app. named v3.
-Daniel :: did UML
+Abdullah :: using v1-swing
+	-fixed the taskbar to be more usuable, and so it could house the calculator button which opens the 	calculator app. 
+	-named v3.
+Daniel :: completed UML diagram
 ==============================================================
 2022-05-31
 --------------------------------------------------------------
 Group :: We fixed the issue where when you close calculator, everything closes. POGGERS
 David :: Did v4 - major restructuring of the project structure to enhance maintainability and uniformity
         - initiate plan to use json for virtual file system format (maybe smth better can be used instead)
-Abdullah :: Created the flowchart 
+Abdullah :: completed the flowchart 
 Daniel :: Updated the readme file 
 ==============================================================
 2022-06-01
@@ -161,7 +163,14 @@ Daniel :: updated readme file
 ==============================================================
 2022-06-03
 --------------------------------------------------------------
-David :: rename Main to Woo to be compliant to standards
+Group :: rename Main to Woo to be compliant to standards
         - added basic event listeners to enable JPanel dragging
         - allow for JPanel resizing
+==============================================================
+2022-06-04
+--------------------------------------------------------------
+Abdullah :: windows can now be dragged using mouseevents
+	-fixed calculator bugs
+	-tweaked applications to fill up content window
+	-started framework for tic tac toe 
 ==============================================================
