@@ -163,7 +163,7 @@ Daniel :: updated readme file
 ==============================================================
 2022-06-03
 --------------------------------------------------------------
-Group :: rename Main to Woo to be compliant to standards
+David :: rename Main to Woo to be compliant to standards
         - added basic event listeners to enable JPanel dragging
         - allow for JPanel resizing
 ==============================================================
@@ -173,4 +173,9 @@ Abdullah :: windows can now be dragged using mouseevents
 	-fixed calculator bugs
 	-tweaked applications to fill up content window
 	-started framework for tic tac toe 
+David :: Figured out how to add menubar to jpanel       
+             - added menu bar to file explorer (file, view, help, etc)
+        - discovered a bit of a design error for titlebar margins
+        - implement File class to enable reading and write of Virtual File System
+        - started to implement dynamic clock view on taskbar
 ==============================================================
