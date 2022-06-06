@@ -36,7 +36,7 @@ public class Woo extends JFrame {
 
         JLayeredPane mainWindow = new JLayeredPane();
 
-        JPanel homescreen = new JPanel();
+        JPanel homescreen = new JPanel(new FlowLayout(FlowLayout.LEFT));
         // default fullscreen yet allows for resizing
         homescreen.setSize(new Dimension(size));
         homescreen.setBackground(new Color(0x55aaaa));
