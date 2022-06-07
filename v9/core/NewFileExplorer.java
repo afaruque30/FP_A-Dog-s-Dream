@@ -24,8 +24,23 @@ public class NewFileExplorer extends Application {
         JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu("File");
         JMenuItem menuItem = new JMenuItem("New");
+
+        JMenu edit = new JMenu("Edit");
+        JMenuItem editItem = new JMenuItem("Cut");
+        JMenuItem editItem2 = new JMenuItem("Copy");
+
+        edit.add(editItem);
+        edit.add(editItem2);
+
+        JMenu view = new JMenu("View");
+
+        JMenu help = new JMenu("Help");
+
         menu.add(menuItem);
         menuBar.add(menu);
+        menuBar.add(edit);
+        menuBar.add(view);
+        menuBar.add(help);
         super.MenuApplication("File Explorer", "./assets/explorer.png", desktop, taskbar, appsPane, menuBar);
     }
 
