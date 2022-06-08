@@ -14,6 +14,7 @@ import java.util.Stack;
 
 import components.Application;
 import core.Calculator;
+import core.MSPaint;
 import core.Taskbar;
 import core.TicTacToe;
 import core.NewFileExplorer;
@@ -62,7 +63,7 @@ public class Woo extends JFrame {
         this.add(mainWindow, BorderLayout.CENTER);
 
         new Application("File Explorer", "./assets/explorer.png", desktop, taskbar, appsPane);
-        new Application("Paint", "./assets/paint.png", desktop, taskbar, appsPane);
+        new MSPaint(desktop, taskbar, appsPane);
         new Application("Notepad", "./assets/notepad.png", desktop, taskbar, appsPane);
         new Calculator(desktop, taskbar, appsPane);
         new TicTacToe(desktop, taskbar, appsPane);
