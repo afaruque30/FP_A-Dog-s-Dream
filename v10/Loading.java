@@ -1,42 +1,23 @@
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+
 import java.awt.*;
 
-public class Loading extends JFrame {
-
-    public static void bootProcess() {
-        JFrame loadingWindow = new JFrame();
-        // black terminal-esque screen
-        loadingWindow.setTitle("Windows 95");
-        loadingWindow.setIconImage(new ImageIcon("./assets/windows95.png").getImage());
-        loadingWindow.setBackground(Color.black);
-        loadingWindow.setExtendedState(MAXIMIZED_BOTH); 
-        loadingWindow.getContentPane().setBackground(new Color(0x55aaaa));
-        // load terminal font
-        Font font = new Font("Terminal", Font.PLAIN, 20);
-        loadingWindow.setFont(font);
-
-        JPanel panel = new JPanel();
-        panel.setBackground(Color.black);
-        panel.setLayout(new BorderLayout());
-
-        JLabel start = new JLabel("Loading");
-        panel.add(start);
-
-        // incremental loading bar
-        JProgressBar progressBar = new JProgressBar(0, 100);
-        progressBar.setValue(0);
-        progressBar.setStringPainted(true);
-        progressBar.setForeground(Color.white);
-        progressBar.setBackground(Color.black);
-        progressBar.setBorderPainted(false);
-        progressBar.setString("Loading...");
-        panel.add(progressBar, BorderLayout.CENTER);
-
-        loadingWindow.getContentPane().add(panel);
-        loadingWindow.setVisible(true);
-    }
+public class Loading extends JPanel {
+    JPanel content;
 
     public Loading() {
-        javax.swing.SwingUtilities.invokeLater(Loading::bootProcess);
+        // function as loading screen for the os
+        content = new JPanel();
+        content.setLayout(new BorderLayout());
+        content.setBackground(Color.BLACK);
+        content.setPreferredSize(new Dimension(300, 300));
+        content.setBorder(new EmptyBorder(4, 40, 4, 40));
+
+        JLabel label = new JLabel("Loading...", SwingConstants.CENTER);
+        label.setForeground(Color.WHITE);
+        content.add(label, BorderLayout.CENTER);
+
     }
+
 }

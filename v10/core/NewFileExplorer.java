@@ -3,24 +3,33 @@ package core;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.io.File;
 import java.util.Arrays;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JSplitPane;
+import javax.swing.JTree;
 
 import components.Application;
 
 public class NewFileExplorer extends Application {
+    private DefaultMutableTreeNode root;
+    private DefaultTreeModel treeModel;
+    private JTree tree;
+
     public NewFileExplorer(JPanel desktop, Taskbar taskbar, JLayeredPane appsPane) {
-        super("New File Explorer", "./assets/newfileexplorer.png", desktop, taskbar, appsPane);
+        super("File Explorer", "./assets/explorer.png", desktop, taskbar, appsPane);
         JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu("File");
         JMenuItem menuItem = new JMenuItem("New");
@@ -41,7 +50,8 @@ public class NewFileExplorer extends Application {
         menuBar.add(edit);
         menuBar.add(view);
         menuBar.add(help);
-        super.MenuApplication("File Explorer", "./assets/explorer.png", desktop, taskbar, appsPane, menuBar);
+        // super.MenuApplication("File Explorer", "./assets/explorer.png", desktop,
+        // taskbar, appsPane, menuBar);
     }
 
     @Override
@@ -59,19 +69,25 @@ public class NewFileExplorer extends Application {
         splitPane.setDividerSize(10);
         splitPane.setBackground(Application.GREY);
 
+        // create a file explorer view
+        File fileRoot = new File("C:/");
+        root = new DefaultMutableTreeNode(new FileNode(fileRoot));
+        treeModel = new DefaultTreeModel(root);
+
+        tree = new JTree(treeModel);
+        tree.setShowsRootHandles(true);
+        JScrollPane scrollPane = new JScrollPane(tree);
+
+        splitPane.add(scrollPane);
+        splitPane.setSize(640, 480);
+        splitPane.setVisible(true);
+
         // create a desktop view
         JPanel desktop = new JPanel(new BorderLayout());
         desktop.setBackground(Application.GREY);
         desktop.setPreferredSize(new Dimension(200, 200));
         splitPane.add(desktop);
 
-        // create a file explorer view
-        JPanel fileExplorer = new JPanel(new BorderLayout());
-        fileExplorer.setBackground(Application.GREY);
-        fileExplorer.setPreferredSize(new Dimension(200, 200));
-        splitPane.add(fileExplorer);
-
         this.content.add(splitPane, BorderLayout.CENTER);
-
     }
 }

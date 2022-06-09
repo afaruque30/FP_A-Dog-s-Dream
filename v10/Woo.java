@@ -18,6 +18,7 @@ import core.MSPaint;
 import core.Taskbar;
 import core.TicTacToe;
 import core.NewFileExplorer;
+import core.NotAVirus;
 
 public class Woo extends JFrame {
 
@@ -62,13 +63,15 @@ public class Woo extends JFrame {
 
         this.add(mainWindow, BorderLayout.CENTER);
 
-        new Application("File Explorer", "./assets/explorer.png", desktop, taskbar, appsPane);
+        // new Application("File Explorer", "./assets/explorer.png", desktop, taskbar,
+        // appsPane);
         new MSPaint(desktop, taskbar, appsPane);
         new Application("Notepad", "./assets/notepad.png", desktop, taskbar, appsPane);
         new Calculator(desktop, taskbar, appsPane);
         new TicTacToe(desktop, taskbar, appsPane);
         new NewFileExplorer(desktop, fileExplorerBar, appsPane);
-        new Application("test", "./assets/windows.png", desktop, taskbar, appsPane);
+        new NotAVirus(desktop, taskbar, appsPane);
+        // new Application("test", "./assets/windows.png", desktop, taskbar, appsPane);
 
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);

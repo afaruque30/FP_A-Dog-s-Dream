@@ -183,4 +183,11 @@ David :: Figured out how to add menubar to jpanel
 --------------------------------------------------------------
 David :: Got MSPaint working.
         - added MouseMotionAdapter and MouseAdapters in order to achieve desired functionality
+        - add functionality to choose custom colors as well
+        - opted to use the same color as the panel as the color for eraser
+        - fixed file explorer splitpanes
+        - added DefaultMutableTreeNode and other treemodels to enable file system navigation
+        - started easter egg app
+        - started windows button popup
+        - made changes to the implementation of loading screen
 ==============================================================

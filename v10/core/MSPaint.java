@@ -59,6 +59,14 @@ public class MSPaint extends Application {
         }) {
             JButton key = new JButton(buttonColor);
             key.setOpaque(true);
+            // add button listener here
+            key.addActionListener(e -> {
+                System.out.println(buttonColor);
+                currentColor = buttonColor;
+                if (buttonColor.equals("eraser")) {
+                    currentColor = "white";
+                }
+            });
             key.setBackground(colorArray[i]);
             keyPad.add(key);
             i++;
@@ -92,7 +100,7 @@ public class MSPaint extends Application {
 
             @Override
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                System.out.println("mouse moved, at: " + evt.getX() + ", " + evt.getY());
+                // System.out.println("mouse moved, at: " + evt.getX() + ", " + evt.getY());
                 if (isDrawing) {
                     paint(evt.getX(), evt.getY());
                 }
@@ -103,9 +111,32 @@ public class MSPaint extends Application {
     protected void paint(int x, int y) {
         System.out.println(x + " " + y);
         Graphics g = this.display.getGraphics();
-        g.setColor(Color.BLACK);
+        g.setColor(convertColor(currentColor));
         g.fillOval(x, y, (int) this.strokeWidth, (int) this.strokeWidth);
+    }
 
+    private Color convertColor(String color) {
+        switch (color) {
+            case "yellow":
+                return Color.yellow;
+            case "green":
+                return Color.green;
+            case "cyan":
+                return Color.cyan;
+            case "blue":
+                return Color.blue;
+            case "magenta":
+                return Color.magenta;
+            case "pink":
+                return Color.pink;
+            case "red":
+                return Color.red;
+            case "white":
+                // to match the background color of the display
+                return new Color(238, 238, 238);
+            default:
+                return Color.black;
+        }
     }
 
     // @TODO add event listeners for mousedown; mouseadapters

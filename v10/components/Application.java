@@ -31,6 +31,7 @@ public class Application implements ActionListener {
     private JButton desktopIcon;
     private JButton taskbarIcon;
     private Point prevPt;
+    private JMenuBar appMenu;
 
     protected JPanel window;
     protected JPanel content;
@@ -96,8 +97,8 @@ public class Application implements ActionListener {
         this.taskbarIcon.setToolTipText(this.appName);
         this.taskbarIcon.setVisible(false);
         this.taskbarIcon.addActionListener(e -> this.window.setVisible(!this.window.isShowing()));
-
-        setupWindow(menu);
+        appMenu = menu;
+        setupWindow();
         desktop.add(this.desktopIcon);
         taskbar.add(this.taskbarIcon);
         appsPane.add(this.window);
@@ -109,7 +110,7 @@ public class Application implements ActionListener {
 
         JPanel titleBar = new JPanel(new BorderLayout());
         titleBar.setBorder(new EmptyBorder(0, 0, 0, 0));
-        titleBar.setPreferredSize(new Dimension(200, 30));
+        titleBar.setPreferredSize(new Dimension(200, appMenu == null ? 30 : 50));
         titleBar.setBackground(new Color(0x0000aa));
 
         JLabel title = new JLabel(this.appName);
@@ -135,6 +136,9 @@ public class Application implements ActionListener {
 
         titleBar.add(title, BorderLayout.WEST);
         titleBar.add(buttonTray, BorderLayout.EAST);
+        if (appMenu != null) {
+            this.window.add(appMenu);
+        }
 
         titleBar.addMouseListener(new MouseAdapter() {
             @Override

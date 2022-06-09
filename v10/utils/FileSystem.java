@@ -1,6 +1,6 @@
 import javax.json.*;
 
-public class File {
+public class FileSystem {
     // provide methods to writing and reading files
     // provide methods to create directories
 
@@ -39,8 +39,8 @@ public class File {
 
     JsonObject fileSystem;
 
-    public File() {
-        File vfs = new File("../vfs.json");
+    public FileSystem() {
+        FileSystem vfs = new FileSystem("../vfs.json");
 
         if (vfs.exists()) {
             JSONReader reader = new JSONReader(vfs);
@@ -52,7 +52,7 @@ public class File {
     }
 
     public void initVFS() {
-        File vfs = new File("../vfs.json");
+        FileSystem vfs = new FileSystem("../vfs.json");
 
         JsonObject vfsJson = Json.createObjectBuilder()
                 .add("vfs", Json.createObjectBuilder()
