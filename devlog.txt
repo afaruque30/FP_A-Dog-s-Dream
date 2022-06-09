@@ -191,4 +191,8 @@ David :: Got MSPaint working.
         - started windows button popup
         - made changes to the implementation of loading screen
         - new dynamic clock with hh:mm:ss format
+Abdullah ::
+        - finished tic tac toe
+        - implemented a very basic notepad 
+        - started working on settings 
 ==============================================================

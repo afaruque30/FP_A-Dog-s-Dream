@@ -6,12 +6,9 @@ import javax.swing.JPanel;
 import components.Application;
 
 public class Settings extends Application {
-    String backgroundColor;
-    String backgroundImage;
 
-    public Settings(String appName, String iconPath, JPanel desktop, Taskbar taskbar, JLayeredPane appsPane) {
-        super(appName, iconPath, desktop, taskbar, appsPane);
-        //TODO Auto-generated constructor stub
+    public Settings(JPanel desktop, Taskbar taskbar, JLayeredPane appsPane) {
+        super("Settings", "./assets/settings.png", desktop, taskbar, appsPane);
     }
-    
+
 }
