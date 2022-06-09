@@ -4,8 +4,11 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.io.File;
+import java.nio.file.FileSystem;
 import java.util.Arrays;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
@@ -13,13 +16,16 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.filechooser.FileSystemView;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JSplitPane;
 import javax.swing.JTree;
+import javax.swing.JComponent;
 
 import components.Application;
 
@@ -27,6 +33,9 @@ public class NewFileExplorer extends Application {
     private DefaultMutableTreeNode root;
     private DefaultTreeModel treeModel;
     private JTree tree;
+    private static final ImageIcon FOLDER = new ImageIcon("./assets/folder.png");
+    private static final ImageIcon FILE = new ImageIcon("./assets/file.png");
+    private static final ImageIcon DISK = new ImageIcon("./assets/diskFileExplorer.png");
 
     public NewFileExplorer(JPanel desktop, Taskbar taskbar, JLayeredPane appsPane) {
         super("File Explorer", "./assets/explorer.png", desktop, taskbar, appsPane);
@@ -72,11 +81,17 @@ public class NewFileExplorer extends Application {
         // create a file explorer view
         File fileRoot = new File("C:/");
         // show host file system
-        root = new DefaultMutableTreeNode(new FileNode(fileRoot));
-        treeModel = new DefaultTreeModel(root);
+        File[] files = fileRoot.listFiles();
+        root = new DefaultMutableTreeNode(files[0]);
+        for (File file : files) {
+            root.add(new DefaultMutableTreeNode(file));
+        }
 
+        treeModel = new DefaultTreeModel(root);
         tree = new JTree(treeModel);
         tree.setShowsRootHandles(true);
+        tree.setCellRenderer(new FileTreeCellRenderer());
+
         JScrollPane scrollPane = new JScrollPane(tree);
 
         splitPane.add(scrollPane);
@@ -91,4 +106,54 @@ public class NewFileExplorer extends Application {
 
         this.content.add(splitPane, BorderLayout.CENTER);
     }
+
+    private void setupIcons(File f) {
+        JButton button = new JButton();
+        try {
+            ImageIcon icon = (ImageIcon) FileSystemView.getFileSystemView().getSystemIcon(f);
+            button.setIcon(icon);
+            button.setText(FileSystemView.getFileSystemView().getSystemDisplayName(f));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    class FileTreeCellRenderer extends DefaultTreeCellRenderer {
+
+        private FileSystemView fileSystemView;
+
+        private JLabel label;
+
+        FileTreeCellRenderer() {
+            label = new JLabel();
+            label.setOpaque(true);
+            fileSystemView = FileSystemView.getFileSystemView();
+        }
+
+        @Override
+        public JComponent getTreeCellRendererComponent(
+                JTree tree,
+                Object value,
+                boolean selected,
+                boolean expanded,
+                boolean leaf,
+                int row,
+                boolean hasFocus) {
+
+            DefaultMutableTreeNode node = (DefaultMutableTreeNode) value;
+            File file = (File) node.getUserObject();
+            label.setIcon(fileSystemView.getSystemIcon(file));
+            label.setText(fileSystemView.getSystemDisplayName(file));
+            label.setToolTipText(file.getPath());
+
+            if (selected) {
+                label.setBackground(backgroundSelectionColor);
+            } else {
+                label.setBackground(backgroundNonSelectionColor);
+            }
+
+            return label;
+        }
+    }
+
 }
