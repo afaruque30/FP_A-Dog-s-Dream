@@ -6,14 +6,21 @@ import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import javax.swing.JLabel;
+import javax.swing.Timer;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import core.Clock;
 
 public class Taskbar extends JPanel implements ActionListener {
     private JButton startButton;
+    private final JLabel timeLabel = new JLabel(new SimpleDateFormat("HH:mm:ss")
+            .format(new Date()));
 
     public Taskbar() {
         super();
@@ -28,14 +35,19 @@ public class Taskbar extends JPanel implements ActionListener {
         this.startButton.setIcon(new ImageIcon(new ImageIcon("./assets/windows.png").getImage()
                 .getScaledInstance(30, 30, Image.SCALE_SMOOTH)));
 
-        JPanel clock = new JPanel();
-        clock.setBackground(new Color(0xc3c7cb));
-        clock.setPreferredSize(new Dimension(100, 50));
-        clock.setLayout(new FlowLayout(FlowLayout.LEADING));
-        clock.setBorder(new EmptyBorder(2, 2, 2, 2));
-        // dynamically update the clock
+        this.startButton.addActionListener(this);
+
+        Timer timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                timeLabel.setText(new SimpleDateFormat("HH:mm:ss")
+                        .format(new Date()));
+            }
+        });
+        timer.start();
 
         this.add(this.startButton);
+        this.add(this.timeLabel);
     }
 
     @Override

@@ -190,4 +190,5 @@ David :: Got MSPaint working.
         - started easter egg app
         - started windows button popup
         - made changes to the implementation of loading screen
+        - new dynamic clock with hh:mm:ss format
 ==============================================================

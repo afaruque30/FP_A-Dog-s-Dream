@@ -71,6 +71,7 @@ public class NewFileExplorer extends Application {
 
         // create a file explorer view
         File fileRoot = new File("C:/");
+        // show host file system
         root = new DefaultMutableTreeNode(new FileNode(fileRoot));
         treeModel = new DefaultTreeModel(root);
 
