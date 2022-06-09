@@ -179,3 +179,8 @@ David :: Figured out how to add menubar to jpanel
         - implement File class to enable reading and write of Virtual File System
         - started to implement dynamic clock view on taskbar
 ==============================================================
+2022-06-09
+--------------------------------------------------------------
+David :: Got MSPaint working.
+        - added MouseMotionAdapter and MouseAdapters in order to achieve desired functionality
+==============================================================
