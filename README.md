@@ -10,10 +10,11 @@
                         \   /__'|| \\_  |    \
                          \_____)|_).\_).||(__V
 
-## Roster 
-#### Abdullah Faruque, David Chen, Daniel Jung ####
+## Roster
 
-## Project Description ##
+#### David Chen, Abdullah Faruque, Daniel Jung
+
+## Project Description
 
                      ________________________________________________
                     /                                                \
@@ -44,13 +45,12 @@
         :-------------------------------------------------------------------------:
         `---._.-------------------------------------------------------------._.---'
 
+Our project, in short is our take on a Virtual Machine in Java. We aim to recreate the Windows 95 experience, with apps like TicTacToe, MS Paint, Calculator, File Explorer, and more.
 
-Our project, in short is our take on a Virtual Machine in Java. We aim to recreate the Windows 95 experience, with apps like TicTacToe, MS Paint, Calculator, and more.
+## How to Launch
 
-## How to Launch ##
-1. git clone: git@github.com:afaruque30/FP_A-Dog-s-Dream.git
-2. Compile and run in version 10 ```driver/Woo.java```
-3. Enjoy
-
+1. git clone: `git@github.com:afaruque30/FP_A-Dog-s-Dream.git`
+2. run `javac driver/Woo.java` and `java driver/Woo`
+3. Enjoy your new copy of Windows 95
 
 PS: ASCII ART FOUND AT: https://www.asciiart.eu/
