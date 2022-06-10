@@ -11,7 +11,7 @@
                          \_____)|_).\_).||(__V
 
 ## Roster 
-#### David Chen, Abdullah Faruque, Daniel Jung ####
+#### Abdullah Faruque, David Chen, Daniel Jung ####
 
 ## Project Description ##
 
