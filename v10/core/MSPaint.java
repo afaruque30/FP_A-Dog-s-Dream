@@ -5,13 +5,10 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Color;
-import java.util.Arrays;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import components.Application;
@@ -32,7 +29,6 @@ public class MSPaint extends Application {
 
     public MSPaint(JPanel desktop, Taskbar taskbar, JLayeredPane appsPane) {
         super("MS Paint", "./assets/paint.png", desktop, taskbar, appsPane);
-        // TODO Auto-generated constructor stub
     }
 
     @Override
@@ -61,7 +57,6 @@ public class MSPaint extends Application {
             key.setOpaque(true);
             // add button listener here
             key.addActionListener(e -> {
-                System.out.println(buttonColor);
                 currentColor = buttonColor;
                 if (buttonColor.equals("eraser")) {
                     currentColor = "white";
@@ -80,12 +75,10 @@ public class MSPaint extends Application {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 isDrawing = true;
                 paint(evt.getX(), evt.getY());
-                System.out.println("Mouse pressed at: " + evt.getX() + ", " + evt.getY());
             }
 
             @Override
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                System.out.println("mouse released");
                 isDrawing = false;
             }
         });
@@ -93,14 +86,12 @@ public class MSPaint extends Application {
         display.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             @Override
             public void mouseDragged(java.awt.event.MouseEvent evt) {
-                System.out.println("mouse dragged");
                 paint(evt.getX(), evt.getY());
                 isDrawing = true;
             }
 
             @Override
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                // System.out.println("mouse moved, at: " + evt.getX() + ", " + evt.getY());
                 if (isDrawing) {
                     paint(evt.getX(), evt.getY());
                 }
@@ -109,7 +100,6 @@ public class MSPaint extends Application {
     }
 
     protected void paint(int x, int y) {
-        System.out.println(x + " " + y);
         Graphics g = this.display.getGraphics();
         g.setColor(convertColor(currentColor));
         g.fillOval(x, y, (int) this.strokeWidth, (int) this.strokeWidth);

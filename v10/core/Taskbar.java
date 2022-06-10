@@ -15,9 +15,16 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import core.Clock;
 
 public class Taskbar extends JPanel implements ActionListener {
+    private final class TimerActionListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            timeLabel.setText(new SimpleDateFormat("HH:mm:ss")
+                    .format(new Date()));
+        }
+    }
+
     private JButton startButton;
     private final JLabel timeLabel = new JLabel(new SimpleDateFormat("HH:mm:ss")
             .format(new Date()));
@@ -37,13 +44,7 @@ public class Taskbar extends JPanel implements ActionListener {
 
         this.startButton.addActionListener(this);
 
-        Timer timer = new Timer(1000, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                timeLabel.setText(new SimpleDateFormat("HH:mm:ss")
-                        .format(new Date()));
-            }
-        });
+        Timer timer = new Timer(1000, new TimerActionListener());
         timer.start();
 
         this.add(this.startButton);
@@ -52,6 +53,6 @@ public class Taskbar extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // document why this method is empty
+        // TODO document why this method is empty
     }
 }

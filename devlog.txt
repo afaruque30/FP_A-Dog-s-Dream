@@ -195,5 +195,6 @@ David :: Got MSPaint working.
 Abdullah ::
         - finished tic tac toe
         - implemented a very basic notepad 
-        - started working on settings 
+        - can now change the background color with settings app
+        - moved woo.java to driver package to allow settings to reference it
 ==============================================================

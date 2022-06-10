@@ -15,10 +15,7 @@ import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.TreeExpansionEvent;
-import javax.swing.event.TreeExpansionListener;
 import javax.swing.filechooser.FileSystemView;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
@@ -95,36 +92,6 @@ public class NewFileExplorer extends Application {
         tree.setShowsRootHandles(true);
         tree.setCellRenderer(new FileTreeCellRenderer());
 
-        tree.addTreeExpansionListener(new TreeExpansionListener() {
-            // Make sure expansion is threaded and updating the tree model
-            // only occurs within the event dispatching thread.
-            @Override
-            public void treeExpanded(TreeExpansionEvent event) {
-                final DefaultMutableTreeNode node = (DefaultMutableTreeNode) event.getPath().getLastPathComponent();
-
-                Thread runner = new Thread() {
-                    public void run() {
-                        node.removeAllChildren();
-                        Runnable runnable = new Runnable() {
-                            public void run() {
-                                treeModel.reload(node);
-                            }
-                        };
-                        SwingUtilities.invokeLater(runnable);
-                    }
-                };
-                runner.start();
-            }
-
-            @Override
-            public void treeCollapsed(TreeExpansionEvent event) {
-                // TODO Auto-generated method stub
-
-            }
-        });
-        tree.expandRow(1);
-
-        // ==========================================================//
         JScrollPane scrollPane = new JScrollPane(tree);
 
         splitPane.add(scrollPane);
@@ -138,6 +105,17 @@ public class NewFileExplorer extends Application {
         splitPane.add(desktop);
 
         this.content.add(splitPane, BorderLayout.CENTER);
+    }
+
+    private void setupIcons(File f) {
+        JButton button = new JButton();
+        try {
+            ImageIcon icon = (ImageIcon) FileSystemView.getFileSystemView().getSystemIcon(f);
+            button.setIcon(icon);
+            button.setText(FileSystemView.getFileSystemView().getSystemDisplayName(f));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     class FileTreeCellRenderer extends DefaultTreeCellRenderer {

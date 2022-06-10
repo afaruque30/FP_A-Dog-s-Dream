@@ -16,7 +16,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
-import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -107,7 +106,6 @@ public class Application implements ActionListener {
     protected void setupWindow() {
         this.window = new JPanel(new BorderLayout());
         this.window.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
-        this.window.setFocusable(true);
 
         JPanel titleBar = new JPanel(new BorderLayout());
         titleBar.setBorder(new EmptyBorder(0, 0, 0, 0));

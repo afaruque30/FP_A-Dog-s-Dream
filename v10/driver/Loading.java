@@ -1,7 +1,13 @@
-import javax.swing.*;
-import javax.swing.border.EmptyBorder;
+package driver;
 
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 
 public class Loading extends JPanel {
     JPanel content;
