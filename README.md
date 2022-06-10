@@ -1,23 +1,56 @@
 # FP_A-Dog-s-Dream
 
+        _     /)---(\         /~~~\
+        \\   (/ . . \)       /  .. \
+         \\__)-\(*)/        (_,\  |_)
+         \_       (_        /   \@/    /^^^\
+         (___/-(____) _    /      \   / . . \
+                     \\   /  `    |   V\ Y /V
+                      \\/  \   | _\    / - \
+                        \   /__'|| \\_  |    \
+                         \_____)|_).\_).||(__V
+
 ## Roster 
 #### David Chen, Abdullah Faruque, Daniel Jung ####
 
 ## Project Description ##
 
-Our project, in short is our take on a Virtual Machine in Java. We aim to recreate the Windows 95 experience, with apps like TicTactics, MS Paint, Calculator, and more.
+                     ________________________________________________
+                    /                                                \
+                   |    _________________________________________     |
+                   |   |                                         |    |
+                   |   |  WINDOWS 95                             |    |
+                   |   |                                         |    |
+                   |   |                                         |    |
+                   |   |                                         |    |
+                   |   |                                         |    |
+                   |   |                                         |    |
+                   |   |                                         |    |
+                   |   |                                         |    |
+                   |   |                                         |    |
+                   |   |                                         |    |
+                   |   |                                         |    |
+                   |   |                                         |    |
+                   |   |_________________________________________|    |
+                   |                                                  |
+                    \_________________________________________________/
+                           \___________________________________/
+                        ___________________________________________
+                     _-'    .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.  --- `-_
+                  _-'.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.--.  .-.-.`-_
+               _-'.-.-.-. .---.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-`__`. .-.-.-.`-_
+            _-'.-.-.-.-. .-----.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-----. .-.-.-.-.`-_
+         _-'.-.-.-.-.-. .---.-. .-------------------------. .-.---. .---.-.-.-.`-_
+        :-------------------------------------------------------------------------:
+        `---._.-------------------------------------------------------------._.---'
+
+
+Our project, in short is our take on a Virtual Machine in Java. We aim to recreate the Windows 95 experience, with apps like TicTacToe, MS Paint, Calculator, and more.
 
 ## How to Launch ##
-1. Compile and run the Woo file
-2. Click on any of the applications on the taskbar to start a program and enjoy.
+1. git clone: git@github.com:afaruque30/FP_A-Dog-s-Dream.git
+2. Compile and run ```Woo.java```
+3. Enjoy
 
-## To-Do List ## 
-1. Repo
-2. Goog form
-3. readME
-4. Propro
-5. UML
-6. flowchart
-7. Calculator
-8. TicTacToe
-9. MS PAINT
+
+PS: ASCII ART FOUND AT: https://www.asciiart.eu/
