@@ -49,7 +49,7 @@ Our project, in short is our take on a Virtual Machine in Java. We aim to recrea
 
 ## How to Launch ##
 1. git clone: git@github.com:afaruque30/FP_A-Dog-s-Dream.git
-2. Compile and run ```driver/Woo.java```
+2. Compile and run in version 10 ```driver/Woo.java```
 3. Enjoy
 
 
