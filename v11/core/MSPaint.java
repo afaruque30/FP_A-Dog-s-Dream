@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.Color;
 
+import javax.swing.JSlider;
 import javax.swing.JButton;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
@@ -42,7 +43,7 @@ public class MSPaint extends Application {
         this.content.setBackground(Application.GREY);
 
         display = new JPanel();
-        display.setPreferredSize(new Dimension(1100, 692));
+        display.setPreferredSize(new Dimension(1100, 650));
         display.setBorder(new EmptyBorder(4, 4, 4, 4));
 
         JPanel keyPad = new JPanel(new GridLayout(2, 4, 4, 4));
@@ -66,8 +67,28 @@ public class MSPaint extends Application {
             keyPad.add(key);
             i++;
             this.content.add(display, BorderLayout.NORTH);
-            this.content.add(keyPad, BorderLayout.SOUTH);
         }
+
+        // add a slider for stroke width
+        JPanel sliderPanel = new JPanel();
+        sliderPanel.setOpaque(false);
+        sliderPanel.setLayout(new BorderLayout());
+        JSlider strokeSlider = new JSlider(10, 100, (int) 20);
+        strokeSlider.setOpaque(false);
+        strokeSlider.setPaintTicks(true);
+        strokeSlider.setPaintLabels(true);
+        strokeSlider.setMajorTickSpacing(10);
+        strokeSlider.setMinorTickSpacing(1);
+        strokeSlider.setSnapToTicks(true);
+        strokeSlider.setBorder(new EmptyBorder(4, 4, 4, 4));
+        strokeSlider.setPreferredSize(new Dimension(200, 50));
+        strokeSlider.addChangeListener(e -> {
+            strokeWidth = strokeSlider.getValue();
+        });
+        sliderPanel.add(strokeSlider, BorderLayout.CENTER);
+        keyPad.add(sliderPanel, BorderLayout.WEST);
+        // this.content.add(sliderPanel, BorderLayout.EAST);
+        this.content.add(keyPad, BorderLayout.SOUTH);
 
         // add mouse listener to the jpanel display
         display.addMouseListener(new java.awt.event.MouseAdapter() {

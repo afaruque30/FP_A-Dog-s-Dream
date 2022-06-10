@@ -202,5 +202,7 @@ Abdullah ::
 --------------------------------------------------------------
 David :: Finally fixed file explorer functionality 
         - file explorer now has the ability to expand sub directories and display images on the screen
-        
+        - added stroke width slider to MSPaint to adjust paint stroke width
+        - fixed mspaint display sizing
+        - fixed bug where file explorer keeps on freezing due to .isLeaf() errors 
 ==============================================================
