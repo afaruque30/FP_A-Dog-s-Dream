@@ -107,6 +107,7 @@ public class Application implements ActionListener {
     protected void setupWindow() {
         this.window = new JPanel(new BorderLayout());
         this.window.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        this.window.setFocusable(true);
 
         JPanel titleBar = new JPanel(new BorderLayout());
         titleBar.setBorder(new EmptyBorder(0, 0, 0, 0));
