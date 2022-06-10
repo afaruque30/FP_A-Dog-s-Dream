@@ -2,8 +2,12 @@ package core;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.nio.file.FileSystem;
 import java.util.Arrays;
 
@@ -16,6 +20,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.TreeExpansionEvent;
+import javax.swing.event.TreeExpansionListener;
 import javax.swing.filechooser.FileSystemView;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
@@ -24,6 +30,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JSplitPane;
+import javax.swing.JTextArea;
 import javax.swing.JTree;
 import javax.swing.JComponent;
 
@@ -36,6 +43,7 @@ public class NewFileExplorer extends Application {
     private static final ImageIcon FOLDER = new ImageIcon("./assets/folder.png");
     private static final ImageIcon FILE = new ImageIcon("./assets/file.png");
     private static final ImageIcon DISK = new ImageIcon("./assets/diskFileExplorer.png");
+    JPanel desktop;
 
     public NewFileExplorer(JPanel desktop, Taskbar taskbar, JLayeredPane appsPane) {
         super("File Explorer", "./assets/explorer.png", desktop, taskbar, appsPane);
@@ -92,6 +100,73 @@ public class NewFileExplorer extends Application {
         tree.setShowsRootHandles(true);
         tree.setCellRenderer(new FileTreeCellRenderer());
 
+        // add listener for tree selection
+        // tree.addTreeSelectionListener(e -> {
+        // DefaultMutableTreeNode node = (DefaultMutableTreeNode)
+        // tree.getLastSelectedPathComponent();
+        // if (node.isLeaf()) {
+        // File file = (File) node.getUserObject();
+        // if (file.isDirectory()) {
+        // File[] files2 = file.listFiles();
+        // root = new DefaultMutableTreeNode(files2[0]);
+        // for (File file2 : files2) {
+        // root.add(new DefaultMutableTreeNode(file2));
+        // }
+        // treeModel.setRoot(root);
+        // }
+        // }
+        // });
+
+        // add selection listeners and open file if its not a directory
+        tree.addTreeSelectionListener(e -> {
+            DefaultMutableTreeNode node = (DefaultMutableTreeNode) tree.getLastSelectedPathComponent();
+            try {
+                if (node.isLeaf()) {
+                    File file = (File) node.getUserObject();
+                    if (file.isDirectory()) {
+                        File[] files2 = file.listFiles();
+                        root = new DefaultMutableTreeNode(files2[0]);
+                        for (File file2 : files2) {
+                            root.add(new DefaultMutableTreeNode(file2));
+                        }
+                        treeModel.setRoot(root);
+                    } else {
+                        openFile(file);
+                    }
+                }
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+        });
+
+        // add tree expand listener to display further sub-directories and add on to
+        // existing tree
+        tree.addTreeExpansionListener(
+                new TreeExpansionListener() {
+                    @Override
+                    public void treeExpanded(TreeExpansionEvent event) {
+                        // expand and add to root node
+                        DefaultMutableTreeNode node = (DefaultMutableTreeNode) event.getPath().getLastPathComponent();
+                        if (node.isLeaf()) {
+                            File file = (File) node.getUserObject();
+                            if (file.isDirectory()) {
+                                File[] files2 = file.listFiles();
+                                for (File file2 : files2) {
+                                    root.add(new DefaultMutableTreeNode(file2));
+                                }
+                            }
+                        }
+                        treeModel.setRoot(root);
+                        treeModel.reload(root);
+                    }
+
+                    @Override
+                    public void treeCollapsed(TreeExpansionEvent event) {
+                        // TODO Auto-generated method stub
+
+                    }
+                });
+
         JScrollPane scrollPane = new JScrollPane(tree);
 
         splitPane.add(scrollPane);
@@ -99,22 +174,53 @@ public class NewFileExplorer extends Application {
         splitPane.setVisible(true);
 
         // create a desktop view
-        JPanel desktop = new JPanel(new BorderLayout());
+        desktop = new JPanel(new BorderLayout());
         desktop.setBackground(Application.GREY);
         desktop.setPreferredSize(new Dimension(200, 200));
+        // add text area to desktop
+        JTextArea textArea = new JTextArea();
+        textArea.setBackground(Application.GREY);
+        textArea.setFont(new Font("Arial", Font.PLAIN, 12));
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
+        textArea.setEditable(false);
+        desktop.add(textArea);
         splitPane.add(desktop);
 
         this.content.add(splitPane, BorderLayout.CENTER);
     }
 
-    private void setupIcons(File f) {
-        JButton button = new JButton();
-        try {
-            ImageIcon icon = (ImageIcon) FileSystemView.getFileSystemView().getSystemIcon(f);
-            button.setIcon(icon);
-            button.setText(FileSystemView.getFileSystemView().getSystemDisplayName(f));
-        } catch (Exception e) {
-            e.printStackTrace();
+    // open file function
+    public void openFile(File file) {
+        System.out.println("Opening file: " + file.getName());
+        // display file in the other panel
+        if (file.exists()) {
+            // read file and display in text area
+            desktop.removeAll();
+            // display image if file is an image
+            if (file.getName().endsWith(".png") || file.getName().endsWith(".jpg")
+                    || file.getName().endsWith(".jpeg")) {
+                JLabel label = new JLabel(new ImageIcon(file.getAbsolutePath()));
+                // scale image to fit in window
+                // label.setPreferredSize(new Dimension(desktop.getWidth(),
+                // desktop.getHeight()));
+                desktop.add(label);
+                return;
+            }
+
+            try {
+                BufferedReader reader = new BufferedReader(new FileReader(file));
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    desktop.add(new JLabel(line));
+                    // wrap text to fit in text area
+                    // desktop.add(new JLabel("<html><br></html>"));
+                }
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
