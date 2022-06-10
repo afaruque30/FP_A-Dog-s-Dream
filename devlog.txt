@@ -198,3 +198,9 @@ Abdullah ::
         - can now change the background color with settings app
         - moved woo.java to driver package to allow settings to reference it
 ==============================================================
+2022-06-10
+--------------------------------------------------------------
+David :: Finally fixed file explorer functionality 
+        - file explorer now has the ability to expand sub directories and display images on the screen
+        
+==============================================================

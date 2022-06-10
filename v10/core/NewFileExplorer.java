@@ -3,22 +3,15 @@ package core;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.FileSystem;
-import java.util.Arrays;
-
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.TreeExpansionEvent;
 import javax.swing.event.TreeExpansionListener;
@@ -139,8 +132,6 @@ public class NewFileExplorer extends Application {
             }
         });
 
-        // add tree expand listener to display further sub-directories and add on to
-        // existing tree
         tree.addTreeExpansionListener(
                 new TreeExpansionListener() {
                     @Override
@@ -162,8 +153,6 @@ public class NewFileExplorer extends Application {
 
                     @Override
                     public void treeCollapsed(TreeExpansionEvent event) {
-                        // TODO Auto-generated method stub
-
                     }
                 });
 
@@ -193,17 +182,12 @@ public class NewFileExplorer extends Application {
     // open file function
     public void openFile(File file) {
         System.out.println("Opening file: " + file.getName());
-        // display file in the other panel
         if (file.exists()) {
-            // read file and display in text area
             desktop.removeAll();
             // display image if file is an image
             if (file.getName().endsWith(".png") || file.getName().endsWith(".jpg")
                     || file.getName().endsWith(".jpeg")) {
                 JLabel label = new JLabel(new ImageIcon(file.getAbsolutePath()));
-                // scale image to fit in window
-                // label.setPreferredSize(new Dimension(desktop.getWidth(),
-                // desktop.getHeight()));
                 desktop.add(label);
                 return;
             }
@@ -213,8 +197,6 @@ public class NewFileExplorer extends Application {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     desktop.add(new JLabel(line));
-                    // wrap text to fit in text area
-                    // desktop.add(new JLabel("<html><br></html>"));
                 }
                 reader.close();
             } catch (IOException e) {
